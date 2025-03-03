@@ -86,6 +86,9 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			strokeWidth: {
+				'3': '3px',
+			},
 			keyframes: {
 				'accordion-down': {
 					from: { height: '0' },
@@ -132,5 +135,19 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		function({ addUtilities, theme, e }) {
+			const strokeDasharrayUtilities = {};
+			
+			// Add utilities for stroke-dasharray
+			['10,5', '1000'].forEach(value => {
+				strokeDasharrayUtilities[`.${e(`stroke-dasharray-[${value}]`)}`] = {
+					'stroke-dasharray': value
+				};
+			});
+			
+			addUtilities(strokeDasharrayUtilities);
+		}
+	],
 } satisfies Config;

@@ -24,8 +24,8 @@ const FlowConnector: React.FC<FlowConnectorProps> = ({
   });
 
   const updatePath = () => {
-    const startElement = document.getElementById(startId);
-    const endElement = document.getElementById(endId);
+    const startElement = document.querySelector(`[data-id="${startId}"]`);
+    const endElement = document.querySelector(`[data-id="${endId}"]`);
     
     if (!startElement || !endElement) return;
     

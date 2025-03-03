@@ -11,7 +11,6 @@ import {
   Brain, 
   Code, 
   Database, 
-  Flask, 
   FlaskConical, 
   FolderArchive, 
   Gauge, 
@@ -59,7 +58,7 @@ const Index = () => {
               name="Test Architect" 
               role="Scenario Generation" 
               color="#007AFF" 
-              icon={<Flask size={18} className="text-white" />} 
+              icon={<FlaskConical size={18} className="text-white" />} 
             />
             <Persona 
               name="Suite Composer" 
@@ -145,7 +144,7 @@ const Index = () => {
               description="Transforms requirements into test scenarios, cases, and steps"
               order={1}
               className="col-span-1"
-              id="module-generator"
+              data-id="module-generator"
             />
             
             {/* Module 2: Composer */}
@@ -156,7 +155,7 @@ const Index = () => {
               description="Assembles components into structured test suites"
               order={2}
               className="col-span-1"
-              id="module-composer"
+              data-id="module-composer"
             />
             
             {/* Module 3: Executor */}
@@ -167,7 +166,7 @@ const Index = () => {
               description="Automates test execution with Imran testing protocols"
               order={3}
               className="col-span-1"
-              id="module-executor"
+              data-id="module-executor"
             />
             
             {/* Module 4: Manager */}
@@ -178,7 +177,7 @@ const Index = () => {
               description="Monitors metrics, handles certification processes"
               order={4}
               className="col-span-1"
-              id="module-manager"
+              data-id="module-manager"
             />
           </div>
           
