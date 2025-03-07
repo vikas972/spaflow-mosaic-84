@@ -11,15 +11,17 @@ import {
   Brain, 
   Code, 
   Database, 
+  FileText,
   FlaskConical, 
   FolderArchive, 
   Gauge, 
+  HelpCircle,
   Lightbulb, 
-  Link, 
   Network, 
   PersonStanding, 
   PlaySquare, 
   Puzzle, 
+  Server,
   SquareStack, 
   TestTube, 
   Users, 
@@ -94,21 +96,25 @@ const Index = () => {
                   title="Sampling Knowledge Hub" 
                   description="L0/L1/L2/L3 IPAD/FS/UJ/UserStories/WireFrames/Proto" 
                   icon={<FolderArchive size={18} />} 
+                  label="Functional Testing"
                 />
                 <KnowledgeItem 
                   title="VanGuard Knowledge Hub" 
                   description="TS/TC/Metrics/Reports/Strategy.." 
                   icon={<SquareStack size={18} />} 
+                  label="Functional Testing"
                 />
                 <KnowledgeItem 
                   title="Nexus Knowledge Hub" 
                   description="Reference Arch: L0/L1/L2/L3 DESIGN/Impact Analysis" 
-                  icon={<Brain size={18} />} 
+                  icon={<Server size={18} />} 
+                  label="Technical"
                 />
                 <KnowledgeItem 
                   title="Rainforest Knowledge Hub" 
                   description="Incidents- SNOW/JIRA/User Manuals/Run Book/etc." 
-                  icon={<Network size={18} />} 
+                  icon={<HelpCircle size={18} />} 
+                  label="Support"
                 />
               </div>
             </div>

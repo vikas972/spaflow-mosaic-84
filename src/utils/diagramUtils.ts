@@ -1,4 +1,3 @@
-
 import { ReactNode } from 'react';
 
 // Types for our diagram components
@@ -35,6 +34,7 @@ export interface KnowledgeItemProps {
   title: string;
   description: string;
   icon: ReactNode;
+  label?: string;
 }
 
 // Fade in animation delay helper
