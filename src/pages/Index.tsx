@@ -55,7 +55,7 @@ const Index = () => {
             className="md:col-span-1"
           >
             <Persona 
-              name="Test Architect" 
+              name="Test Designer" 
               role="Scenario Generation" 
               color="#007AFF" 
               icon={<FlaskConical size={18} className="text-white" />} 
@@ -68,7 +68,7 @@ const Index = () => {
             />
             <Persona 
               name="Test Executor" 
-              role="Imran Testing Protocol" 
+              role="Automated Test Execution & Validation" 
               color="#FF9500" 
               icon={<PlaySquare size={18} className="text-white" />} 
             />
