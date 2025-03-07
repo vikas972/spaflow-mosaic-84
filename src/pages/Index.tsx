@@ -80,28 +80,38 @@ const Index = () => {
             />
           </Pillar>
           
-          {/* Pillar 2: Knowledge Garden */}
+          {/* Pillar 2: <DTB> Knowledge Garden */}
           <Pillar 
-            title="Knowledge Garden" 
+            title="<DTB> Knowledge Garden" 
             icon={<Database size={24} className="text-white" />} 
             color="#5856D6"
             className="md:col-span-1"
           >
-            <KnowledgeItem 
-              title="Persistent Knowledge Base" 
-              description="Requirements, test cases, logs, certification" 
-              icon={<FolderArchive size={18} />} 
-            />
-            <KnowledgeItem 
-              title="Semantic Network" 
-              description="Relationships and dependencies mapping" 
-              icon={<Network size={18} />} 
-            />
-            <KnowledgeItem 
-              title="Memory Map" 
-              description="Nodes, edges, timestamps, relevance scores" 
-              icon={<Link size={18} />} 
-            />
+            <div className="mb-4">
+              <h4 className="text-sm font-semibold mb-2">Persistent Knowledge Base:</h4>
+              <div className="space-y-2">
+                <KnowledgeItem 
+                  title="Sampling Knowledge Hub" 
+                  description="L0/L1/L2/L3 IPAD/FS/UJ/UserStories/WireFrames/Proto" 
+                  icon={<FolderArchive size={18} />} 
+                />
+                <KnowledgeItem 
+                  title="VanGuard Knowledge Hub" 
+                  description="TS/TC/Metrics/Reports/Strategy.." 
+                  icon={<SquareStack size={18} />} 
+                />
+                <KnowledgeItem 
+                  title="Nexus Knowledge Hub" 
+                  description="Reference Arch: L0/L1/L2/L3 DESIGN/Impact Analysis" 
+                  icon={<Brain size={18} />} 
+                />
+                <KnowledgeItem 
+                  title="Rainforest Knowledge Hub" 
+                  description="Incidents- SNOW/JIRA/User Manuals/Run Book/etc." 
+                  icon={<Network size={18} />} 
+                />
+              </div>
+            </div>
           </Pillar>
           
           {/* Pillar 3: Skills Modules */}
