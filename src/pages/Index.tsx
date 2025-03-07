@@ -47,105 +47,8 @@ const Index = () => {
       
       {/* Main Flow Diagram */}
       <div className="w-full max-w-7xl relative">
-        {/* Three Pillars Row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {/* Pillar 1: Digital Workforce */}
-          <Pillar 
-            title="Digital Workforce" 
-            icon={<Users size={24} className="text-white" />} 
-            color="#007AFF"
-            className="md:col-span-1"
-          >
-            <Persona 
-              name="Test Designer" 
-              role="Scenario Generation" 
-              color="#007AFF" 
-              icon={<FlaskConical size={18} className="text-white" />} 
-            />
-            <Persona 
-              name="Suite Composer" 
-              role="Test Assembly" 
-              color="#5856D6" 
-              icon={<Puzzle size={18} className="text-white" />} 
-            />
-            <Persona 
-              name="Test Executor" 
-              role="Automated Test Execution & Validation" 
-              color="#FF9500" 
-              icon={<PlaySquare size={18} className="text-white" />} 
-            />
-            <Persona 
-              name="QA Manager" 
-              role="Certification & Improvement" 
-              color="#34C759" 
-              icon={<Gauge size={18} className="text-white" />} 
-            />
-          </Pillar>
-          
-          {/* Pillar 2: <DTB> Knowledge Garden */}
-          <Pillar 
-            title="<DTB> Knowledge Garden" 
-            icon={<Database size={24} className="text-white" />} 
-            color="#5856D6"
-            className="md:col-span-1"
-          >
-            <div className="mb-4">
-              <h4 className="text-sm font-semibold mb-2">Persistent Knowledge Base:</h4>
-              <div className="space-y-2">
-                <KnowledgeItem 
-                  title="Sampling Knowledge Hub" 
-                  description="L0/L1/L2/L3 IPAD/FS/UJ/UserStories/WireFrames/Proto" 
-                  icon={<FolderArchive size={18} />} 
-                  label="Functional Testing"
-                />
-                <KnowledgeItem 
-                  title="VanGuard Knowledge Hub" 
-                  description="TS/TC/Metrics/Reports/Strategy.." 
-                  icon={<SquareStack size={18} />} 
-                  label="Functional Testing"
-                />
-                <KnowledgeItem 
-                  title="Nexus Knowledge Hub" 
-                  description="Reference Arch: L0/L1/L2/L3 DESIGN/Impact Analysis" 
-                  icon={<Server size={18} />} 
-                  label="Technical"
-                />
-                <KnowledgeItem 
-                  title="Rainforest Knowledge Hub" 
-                  description="Incidents- SNOW/JIRA/User Manuals/Run Book/etc." 
-                  icon={<HelpCircle size={18} />} 
-                  label="Support"
-                />
-              </div>
-            </div>
-          </Pillar>
-          
-          {/* Pillar 3: Skills Modules */}
-          <Pillar 
-            title="Skills Modules" 
-            icon={<Code size={24} className="text-white" />} 
-            color="#FF9500"
-            className="md:col-span-1"
-          >
-            <div className="flex flex-wrap">
-              <Skill name="NLP" />
-              <Skill name="Scenario Reasoning" />
-              <Skill name="Decision-Making" />
-              <Skill name="Test Case Generation" />
-              <Skill name="Test Planning" />
-              <Skill name="Contextual Memory" />
-              <Skill name="Generative Content" />
-              <Skill name="Automation Logic" />
-              <Skill name="Feedback Integration" />
-              <Skill name="Certification" />
-              <Skill name="Compliance" />
-              <Skill name="Multi-Modal Processing" />
-            </div>
-          </Pillar>
-        </div>
-        
-        {/* Core Modules Flow */}
-        <div className="relative mb-10">
+        {/* Core Modules Flow - Moved to top */}
+        <div className="relative mb-16">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-semibold">Core SPA Modules</h2>
             <p className="text-gray-600">Cyclical workflow from requirements to continuous improvement</p>
@@ -206,13 +109,111 @@ const Index = () => {
         </div>
         
         {/* Starting Point */}
-        <div className="mt-8 glass-card p-4 max-w-xs mx-auto text-center animate-pulse-soft">
+        <div className="mt-2 mb-16 glass-card p-4 max-w-xs mx-auto text-center animate-pulse-soft">
           <div className="flex items-center justify-center">
             <Lightbulb className="text-spa-yellow mr-2" size={20} />
             <h3 className="font-semibold">Product Requirements</h3>
           </div>
           <p className="text-sm text-gray-600 mt-1">Entry point for the SPA workflow</p>
         </div>
+        
+        {/* Three Pillars Row - Moved below Core Modules */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {/* Pillar 1: Digital Workforce */}
+          <Pillar 
+            title="Digital Workforce" 
+            icon={<Users size={24} className="text-white" />} 
+            color="#007AFF"
+            className="md:col-span-1"
+          >
+            <Persona 
+              name="Test Designer" 
+              role="Scenario Generation" 
+              color="#007AFF" 
+              icon={<FlaskConical size={18} className="text-white" />} 
+            />
+            <Persona 
+              name="Suite Composer" 
+              role="Test Assembly" 
+              color="#5856D6" 
+              icon={<Puzzle size={18} className="text-white" />} 
+            />
+            <Persona 
+              name="Test Executor" 
+              role="Automated Test Execution & Validation" 
+              color="#FF9500" 
+              icon={<PlaySquare size={18} className="text-white" />} 
+            />
+            <Persona 
+              name="QA Manager" 
+              role="Certification & Improvement" 
+              color="#34C759" 
+              icon={<Gauge size={18} className="text-white" />} 
+            />
+          </Pillar>
+          
+          {/* Pillar 2: <DTB> Knowledge Garden */}
+          <Pillar 
+            title="<DTB> Knowledge Garden" 
+            icon={<Database size={24} className="text-white" />} 
+            color="#5856D6"
+            className="md:col-span-1"
+          >
+            <div className="mb-4">
+              <h4 className="text-sm font-semibold mb-2">Persistent Knowledge Base:</h4>
+              <div className="space-y-2">
+                <KnowledgeItem 
+                  title="Sampling Knowledge Hub" 
+                  description="Functional Requirements: L0/L1/L2/L3 IPAD/FS/UJ/UserStories/WireFrames/Proto" 
+                  icon={<FolderArchive size={18} />} 
+                  label="Functional Testing"
+                />
+                <KnowledgeItem 
+                  title="VanGuard Knowledge Hub" 
+                  description="TS/TC/Metrics/Reports/Strategy.." 
+                  icon={<SquareStack size={18} />} 
+                  label="Functional Testing"
+                />
+                <KnowledgeItem 
+                  title="Nexus Knowledge Hub" 
+                  description="Reference Arch: L0/L1/L2/L3 DESIGN/Impact Analysis" 
+                  icon={<Server size={18} />} 
+                  label="Technical"
+                />
+                <KnowledgeItem 
+                  title="Rainforest Knowledge Hub" 
+                  description="Incidents- SNOW/JIRA/User Manuals/Run Book/etc." 
+                  icon={<HelpCircle size={18} />} 
+                  label="Support"
+                />
+              </div>
+            </div>
+          </Pillar>
+          
+          {/* Pillar 3: Skills Modules */}
+          <Pillar 
+            title="Skills Modules" 
+            icon={<Code size={24} className="text-white" />} 
+            color="#FF9500"
+            className="md:col-span-1"
+          >
+            <div className="flex flex-wrap">
+              <Skill name="NLP" />
+              <Skill name="Scenario Reasoning" />
+              <Skill name="Decision-Making" />
+              <Skill name="Test Case Generation" />
+              <Skill name="Test Planning" />
+              <Skill name="Contextual Memory" />
+              <Skill name="Generative Content" />
+              <Skill name="Automation Logic" />
+              <Skill name="Feedback Integration" />
+              <Skill name="Certification" />
+              <Skill name="Compliance" />
+              <Skill name="Multi-Modal Processing" />
+            </div>
+          </Pillar>
+        </div>
+        
       </div>
       
       {/* Flow Connectors */}
