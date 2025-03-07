@@ -166,7 +166,7 @@ const Index = () => {
                   title="Sampling Knowledge Hub" 
                   description="Functional Requirements: L0/L1/L2/L3 IPAD/FS/UJ/UserStories/WireFrames/Proto" 
                   icon={<FolderArchive size={18} />} 
-                  label="Functional Testing"
+                  label="Functional Requirements"
                 />
                 <KnowledgeItem 
                   title="VanGuard Knowledge Hub" 
@@ -210,6 +210,16 @@ const Index = () => {
               <Skill name="Certification" />
               <Skill name="Compliance" />
               <Skill name="Multi-Modal Processing" />
+              <Skill name="Reinforcement Learning" />
+              <Skill name="NL2SQL" />
+              <Skill name="NL2API" />
+              <Skill name="Text2Speech" />
+              <Skill name="Speech2Text" />
+              <Skill name="Apply Model/Algos on Knowledge" />
+              <Skill name="Summarize Knowledge into Frames" />
+              <Skill name="Infer from Videos/Composite Content" />
+              <Skill name="Reasoning to Identify Actions" />
+              <Skill name="Ability to Learn" />
             </div>
           </Pillar>
         </div>
