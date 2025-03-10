@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Wand2, Workflow, Database, PieChart, Zap, FileCheck, GitPullRequest, BarChart, GitMerge, ArrowRight, ArrowDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -316,7 +315,7 @@ const GeneratorDetails: React.FC = () => {
             <div className="max-w-md mx-auto mt-2">
               <div className="p-3 bg-green-50 rounded-lg border border-green-100 text-center">
                 <div className="text-xs text-green-500 uppercase tracking-wider mb-1">Compound</div>
-                <div className="font-medium">MVP Lifecycle Manager</div>
+                <div className="font-medium">Generator Agent</div>
               </div>
             </div>
           </div>
@@ -540,3 +539,4 @@ const GeneratorDetails: React.FC = () => {
 };
 
 export default GeneratorDetails;
+
