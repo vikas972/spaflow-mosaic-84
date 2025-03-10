@@ -51,6 +51,8 @@ import {
   TestTube, 
   Users, 
   Wand2,
+  Workflow,
+  Zap,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -70,8 +72,7 @@ const SpecSection = ({ title, color, children }) => (
 );
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState('overview');
-  
+  // Main navigation items
   const navigationItems = [
     { id: 'overview', label: 'Overview', icon: <Home size={16} className="mr-1" /> },
     { id: 'pillars', label: 'SPA Pillars', icon: <Database size={16} className="mr-1" /> },
@@ -81,10 +82,20 @@ const Index = () => {
     { id: 'generator-details', label: 'Generator Details', icon: <Wand2 size={16} className="mr-1" /> },
   ];
   
+  // Generator details sub-navigation
+  const generatorNavItems = [
+    { id: 'generator-overview', label: 'Overview', icon: <Wand2 size={16} className="mr-1" /> },
+    { id: 'generator-workflow', label: 'Workflow', icon: <Workflow size={16} className="mr-1" /> },
+    { id: 'generator-capabilities', label: 'Capabilities', icon: <Zap size={16} className="mr-1" /> },
+    { id: 'generator-metrics', label: 'Metrics', icon: <BarChart size={16} className="mr-1" /> },
+    { id: 'generator-integration', label: 'Integration', icon: <GitMerge size={16} className="mr-1" /> },
+    { id: 'generator-case-studies', label: 'Success Stories', icon: <FileCheck size={16} className="mr-1" /> },
+  ];
+  
   return (
     <div className="min-h-screen flex flex-col items-center py-10 px-4 bg-gradient-to-br from-blue-50 to-indigo-50">
-      {/* Navigation */}
-      <div className="w-full max-w-7xl mb-6">
+      {/* Main Navigation */}
+      <div className="w-full max-w-7xl mb-20">
         <SectionNavigation items={navigationItems} />
       </div>
       
@@ -607,11 +618,16 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Generator Agent Details Section */}
-        <div id="generator-details" className="mt-16 mb-12 scroll-mt-20">
+        {/* Generator Agent Details Section with Sub-Navigation */}
+        <div id="generator-details" className="mt-16 mb-12 scroll-mt-28">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-semibold">Generator Agent Deep Dive</h2>
             <p className="text-gray-600">Detailed exploration of capabilities, workflows, and performance metrics</p>
+          </div>
+          
+          {/* Generator Sub-Navigation */}
+          <div className="mb-8">
+            <SectionNavigation items={generatorNavItems} className="sticky top-20" />
           </div>
           
           <GeneratorDetails />
@@ -639,3 +655,4 @@ const Index = () => {
 };
 
 export default Index;
+

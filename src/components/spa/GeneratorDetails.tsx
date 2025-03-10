@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Wand2, Workflow, Database, PieChart, Zap, FileCheck, GitPullRequest, BarChart, GitMerge } from 'lucide-react';
+import { Wand2, Workflow, Database, PieChart, Zap, FileCheck, GitPullRequest, BarChart, GitMerge, ArrowRight, ArrowDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface DetailSectionProps {
@@ -74,6 +73,48 @@ const ProcessStep: React.FC<ProcessStepProps> = ({ number, title, description, c
   );
 };
 
+const FlowNode: React.FC<{ title: string; type: string; color: string; children?: React.ReactNode }> = ({ 
+  title, 
+  type, 
+  color, 
+  children 
+}) => {
+  return (
+    <div className="flex flex-col items-center">
+      <div 
+        className="p-4 rounded-lg shadow-md border border-gray-100 w-full text-center mb-2"
+        style={{ backgroundColor: `${color}20`, borderColor: color }}
+      >
+        <div className="text-xs uppercase tracking-wider mb-1" style={{ color }}>
+          {type}
+        </div>
+        <div className="font-medium" style={{ color }}>
+          {title}
+        </div>
+      </div>
+      {children}
+    </div>
+  );
+};
+
+const FlowArrow: React.FC<{ direction?: 'down' | 'right'; label?: string }> = ({ 
+  direction = 'down',
+  label
+}) => {
+  return (
+    <div className={`flex ${direction === 'down' ? 'flex-col items-center my-1' : 'items-center mx-2'}`}>
+      {direction === 'down' ? (
+        <ArrowDown className="text-gray-400 my-1" />
+      ) : (
+        <ArrowRight className="text-gray-400 mx-1" />
+      )}
+      {label && (
+        <span className="text-xs text-gray-500">{label}</span>
+      )}
+    </div>
+  );
+};
+
 const GeneratorDetails: React.FC = () => {
   return (
     <div className="space-y-8">
@@ -113,6 +154,46 @@ const GeneratorDetails: React.FC = () => {
             description="Generates scripts compatible with various testing frameworks including Selenium and TestMagic."
             icon={<GitPullRequest size={18} />}
           />
+        </div>
+        
+        <div className="mt-8 p-6 bg-white/80 rounded-lg border border-gray-100 shadow-sm">
+          <h4 className="text-lg font-medium mb-4 text-center text-spa-blue">Generator Agent Architecture</h4>
+          <div className="flex flex-col items-center">
+            <div className="grid grid-cols-3 gap-6 max-w-4xl mx-auto mb-6">
+              <FlowNode title="Requirements" type="Input" color="#6366F1">
+                <FlowArrow />
+              </FlowNode>
+              <FlowNode title="Test Data" type="Input" color="#6366F1">
+                <FlowArrow />
+              </FlowNode>
+              <FlowNode title="Templates" type="Input" color="#6366F1">
+                <FlowArrow />
+              </FlowNode>
+            </div>
+            
+            <div className="w-full max-w-4xl p-4 bg-blue-50 rounded-lg border border-blue-100 text-center mb-6">
+              <h5 className="text-base font-medium text-spa-blue mb-2">Generator Core</h5>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-white p-2 rounded border border-blue-100 text-sm">
+                  Scenario Parser
+                </div>
+                <div className="bg-white p-2 rounded border border-blue-100 text-sm">
+                  Coverage Analyzer
+                </div>
+                <div className="bg-white p-2 rounded border border-blue-100 text-sm">
+                  Script Template
+                </div>
+              </div>
+            </div>
+            
+            <FlowArrow />
+            
+            <div className="grid grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <FlowNode title="Test Scenarios" type="Output" color="#10B981" />
+              <FlowNode title="Test Cases" type="Output" color="#10B981" />
+              <FlowNode title="Test Scripts" type="Output" color="#10B981" />
+            </div>
+          </div>
         </div>
       </DetailSection>
       
@@ -159,6 +240,85 @@ const GeneratorDetails: React.FC = () => {
               description="Finally, it produces framework-specific automation scripts ready for execution in the target environment."
             />
           </div>
+          
+          <div className="mt-8 p-6 bg-white/80 rounded-lg border border-gray-100 shadow-sm">
+            <h4 className="text-lg font-medium mb-6 text-center text-spa-blue">Generator Workflow Pipeline</h4>
+            <div className="flex flex-col md:flex-row items-center justify-between max-w-4xl mx-auto">
+              <div className="flex flex-col items-center mb-4 md:mb-0">
+                <div className="mb-2 w-40 p-3 bg-blue-50 rounded-lg border border-blue-100 text-center">
+                  <div className="text-xs text-blue-500 uppercase tracking-wider mb-1">Atomic</div>
+                  <div className="font-medium">Data Fetcher</div>
+                </div>
+                <FlowArrow direction="down" />
+                <div className="mb-2 w-40 p-3 bg-blue-50 rounded-lg border border-blue-100 text-center">
+                  <div className="text-xs text-blue-500 uppercase tracking-wider mb-1">Atomic</div>
+                  <div className="font-medium">Scenario Parser</div>
+                </div>
+                <FlowArrow direction="down" />
+                <div className="w-40 p-3 bg-indigo-50 rounded-lg border border-indigo-100 text-center">
+                  <div className="text-xs text-indigo-500 uppercase tracking-wider mb-1">Molecular</div>
+                  <div className="font-medium">Script Generator</div>
+                </div>
+              </div>
+              
+              <div className="hidden md:flex flex-col items-center mx-2">
+                <FlowArrow direction="right" />
+                <div className="h-32"></div>
+                <FlowArrow direction="right" />
+              </div>
+              
+              <div className="flex flex-col items-center mb-4 md:mb-0">
+                <div className="mb-2 w-40 p-3 bg-blue-50 rounded-lg border border-blue-100 text-center">
+                  <div className="text-xs text-blue-500 uppercase tracking-wider mb-1">Atomic</div>
+                  <div className="font-medium">Coverage Analyzer</div>
+                </div>
+                <FlowArrow direction="down" />
+                <div className="mb-2 w-40 p-3 bg-blue-50 rounded-lg border border-blue-100 text-center">
+                  <div className="text-xs text-blue-500 uppercase tracking-wider mb-1">Atomic</div>
+                  <div className="font-medium">Validation Checker</div>
+                </div>
+                <FlowArrow direction="down" />
+                <div className="w-40 p-3 bg-indigo-50 rounded-lg border border-indigo-100 text-center">
+                  <div className="text-xs text-indigo-500 uppercase tracking-wider mb-1">Molecular</div>
+                  <div className="font-medium">Coverage Consolidator</div>
+                </div>
+              </div>
+              
+              <div className="hidden md:flex flex-col items-center mx-2">
+                <FlowArrow direction="right" />
+                <div className="h-32"></div>
+                <FlowArrow direction="right" />
+              </div>
+              
+              <div className="flex flex-col items-center">
+                <div className="mb-2 w-40 p-3 bg-blue-50 rounded-lg border border-blue-100 text-center">
+                  <div className="text-xs text-blue-500 uppercase tracking-wider mb-1">Atomic</div>
+                  <div className="font-medium">Data Pattern Generator</div>
+                </div>
+                <FlowArrow direction="down" />
+                <div className="mb-2 w-40 p-3 bg-blue-50 rounded-lg border border-blue-100 text-center">
+                  <div className="text-xs text-blue-500 uppercase tracking-wider mb-1">Atomic</div>
+                  <div className="font-medium">CSV/JSON Transformer</div>
+                </div>
+                <FlowArrow direction="down" />
+                <div className="w-40 p-3 bg-indigo-50 rounded-lg border border-indigo-100 text-center">
+                  <div className="text-xs text-indigo-500 uppercase tracking-wider mb-1">Molecular</div>
+                  <div className="font-medium">Data Factory</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex justify-center mt-6">
+              <FlowArrow direction="down" />
+            </div>
+            
+            <div className="max-w-md mx-auto mt-2">
+              <div className="p-3 bg-green-50 rounded-lg border border-green-100 text-center">
+                <div className="text-xs text-green-500 uppercase tracking-wider mb-1">Compound</div>
+                <div className="font-medium">MVP Lifecycle Manager</div>
+              </div>
+            </div>
+          </div>
         </div>
       </DetailSection>
       
@@ -202,6 +362,59 @@ const GeneratorDetails: React.FC = () => {
               <li>Masks sensitive information automatically</li>
               <li>Ensures data diversity for thorough testing</li>
             </ul>
+          </div>
+        </div>
+        
+        <div className="mt-8 p-6 bg-white/80 rounded-lg border border-gray-100 shadow-sm">
+          <h4 className="text-lg font-medium mb-6 text-center text-spa-blue">Generator Agent Types</h4>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="flex flex-col">
+              <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 text-center mb-4">
+                <h5 className="text-lg font-medium text-blue-700 mb-2">Atomic Agents</h5>
+                <p className="text-sm text-blue-600">Single-purpose components handling specific tasks</p>
+              </div>
+              <ul className="space-y-2">
+                {["Data Fetcher", "Coverage Analyzer", "Script Template", "Scenario Parser", 
+                  "Data Pattern Generator", "Risk Heuristic Engine", "CSV/JSON Transformer", "Validation Checker"
+                ].map(agent => (
+                  <li key={agent} className="bg-white p-2 rounded border border-blue-100 text-sm shadow-sm">
+                    {agent}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="flex flex-col">
+              <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-100 text-center mb-4">
+                <h5 className="text-lg font-medium text-indigo-700 mb-2">Molecular Agents</h5>
+                <p className="text-sm text-indigo-600">Coordinated combinations of atomic agents</p>
+              </div>
+              <ul className="space-y-2">
+                {["Coverage Consolidator", "Script Generator", "Data Factory", 
+                  "Scenario Bundler", "Quick Start Wizard"
+                ].map(agent => (
+                  <li key={agent} className="bg-white p-2 rounded border border-indigo-100 text-sm shadow-sm">
+                    {agent}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="flex flex-col">
+              <div className="bg-green-50 p-4 rounded-lg border border-green-100 text-center mb-4">
+                <h5 className="text-lg font-medium text-green-700 mb-2">Compound Agents</h5>
+                <p className="text-sm text-green-600">High-level orchestrators managing complex flows</p>
+              </div>
+              <ul className="space-y-2">
+                {["MVP Lifecycle Manager", "Extended AI/Analytics"
+                ].map(agent => (
+                  <li key={agent} className="bg-white p-2 rounded border border-green-100 text-sm shadow-sm">
+                    {agent}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </DetailSection>
