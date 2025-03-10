@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Wand2, Workflow, Database, PieChart, Zap, FileCheck, GitPullRequest, BarChart, GitMerge, ArrowRight, ArrowDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -518,17 +519,18 @@ const GeneratorDetails: React.FC = () => {
           </div>
           
           <div className="bg-white/60 p-5 rounded-lg border border-gray-100 shadow-sm">
-            <h4 className="text-lg font-medium mb-2">E-Commerce: Platform Migration Testing</h4>
+            <h4 className="text-lg font-medium mb-2">Digital Corporate Banking: Platform Modernization</h4>
             <p className="text-sm text-gray-700 mb-3">
-              A major retailer migrating their e-commerce platform leveraged the Generator Agent to create parallel test suites for both legacy and new systems. The agent analyzed existing functionality and produced 8,500+ equivalent test cases for the new platform, ensuring feature parity and reducing migration risk.
+              A leading financial institution leveraged the Generator Agent to modernize their corporate banking platform. The agent analyzed complex financial workflows and generated 15,000+ test scenarios covering payment processing, treasury management, and cash flow forecasting features with precise validation for regulatory requirements across multiple jurisdictions.
             </p>
             <div className="text-sm text-spa-blue font-medium">
               Key achievements:
             </div>
             <ul className="text-sm text-gray-700 mt-1 list-disc pl-5">
-              <li>85% reduction in test case creation time</li>
-              <li>56 critical defects identified pre-launch</li>
-              <li>99.2% feature parity verification</li>
+              <li>90% reduction in test case creation time</li>
+              <li>42 critical security vulnerabilities identified pre-launch</li>
+              <li>99.5% transaction accuracy verification</li>
+              <li>Compliance with banking regulations across 28 countries</li>
             </ul>
           </div>
         </div>
