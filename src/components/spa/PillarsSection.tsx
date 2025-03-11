@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Pillar from '@/components/spa/Pillar';
 import Persona from '@/components/spa/Persona';
@@ -61,25 +60,25 @@ const PillarsSection: React.FC = () => {
             <h4 className="text-sm font-semibold mb-2">Persistent Knowledge Base:</h4>
             <div className="space-y-2">
               <KnowledgeItem 
-                title="Sampling Knowledge Hub" 
+                title="Functional Knowledge Hub" 
                 description="L0/L1/L2/L3 IPAD/FS/UJ/UserStories/WireFrames/Proto" 
                 icon={<FolderArchive size={18} />} 
                 label="Functional Requirements"
               />
               <KnowledgeItem 
-                title="VanGuard Knowledge Hub" 
+                title="Testing Knowledge Hub" 
                 description="TS/TC/Metrics/Reports/Strategy.." 
                 icon={<SquareStack size={18} />} 
                 label="Functional Testing"
               />
               <KnowledgeItem 
-                title="Nexus Knowledge Hub" 
+                title="Technology Knowledge Hub" 
                 description="Reference Arch: L0/L1/L2/L3 DESIGN/Impact Analysis" 
                 icon={<Server size={18} />} 
                 label="Technical"
               />
               <KnowledgeItem 
-                title="Rainforest Knowledge Hub" 
+                title="Support Knowledge Hub" 
                 description="Incidents- SNOW/JIRA/User Manuals/Run Book/etc." 
                 icon={<HelpCircle size={18} />} 
                 label="Support"
@@ -97,7 +96,8 @@ const PillarsSection: React.FC = () => {
           data-id="pillar-skills"
         >
           <div className="flex flex-wrap">
-            <Skill name="NLP" />
+            <Skill name="LLM" />
+            <Skill name="Sample Test Data" />
             <Skill name="Scenario Reasoning" />
             <Skill name="Decision-Making" />
             <Skill name="Test Case Generation" />

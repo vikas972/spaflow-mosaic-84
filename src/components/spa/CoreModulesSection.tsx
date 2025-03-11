@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Module from '@/components/spa/Module';
 import FeedbackLoop from '@/components/spa/FeedbackLoop';
@@ -40,7 +39,7 @@ const CoreModulesSection: React.FC = () => {
           title="Executor" 
           icon={<TestTube size={20} className="text-white" />}
           color="#FF9500"
-          description="Automates test execution with Imran testing protocols"
+          description="Automates test execution with target automation scripts. eg. Test Magic"
           order={3}
           className="col-span-1"
           data-id="module-executor"

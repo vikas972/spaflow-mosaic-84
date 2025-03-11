@@ -1,8 +1,7 @@
-
 import React from 'react';
 import GeneratorDetails from '@/components/spa/GeneratorDetails';
 import SectionNavigation from '@/components/spa/SectionNavigation';
-import { Wand2, Workflow, Zap, BarChart, GitMerge, FileCheck } from 'lucide-react';
+import { Wand2, Workflow, Zap, GitMerge } from 'lucide-react';
 
 const GeneratorDetailsSection: React.FC = () => {
   // Generator details sub-navigation
@@ -10,9 +9,7 @@ const GeneratorDetailsSection: React.FC = () => {
     { id: 'generator-overview', label: 'Overview', icon: <Wand2 size={16} className="mr-1" /> },
     { id: 'generator-workflow', label: 'Workflow', icon: <Workflow size={16} className="mr-1" /> },
     { id: 'generator-capabilities', label: 'Capabilities', icon: <Zap size={16} className="mr-1" /> },
-    { id: 'generator-metrics', label: 'Metrics', icon: <BarChart size={16} className="mr-1" /> },
     { id: 'generator-integration', label: 'Integration', icon: <GitMerge size={16} className="mr-1" /> },
-    { id: 'generator-case-studies', label: 'Success Stories', icon: <FileCheck size={16} className="mr-1" /> },
   ];
 
   return (

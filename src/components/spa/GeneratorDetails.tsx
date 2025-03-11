@@ -407,52 +407,13 @@ const GeneratorDetails: React.FC = () => {
                 <p className="text-sm text-green-600">High-level orchestrators managing complex flows</p>
               </div>
               <ul className="space-y-2">
-                {["MVP Lifecycle Manager", "Extended AI/Analytics"
+                {["Generator", "Extended AI/Analytics"
                 ].map(agent => (
                   <li key={agent} className="bg-white p-2 rounded border border-green-100 text-sm shadow-sm">
                     {agent}
                   </li>
                 ))}
               </ul>
-            </div>
-          </div>
-        </div>
-      </DetailSection>
-      
-      <DetailSection 
-        id="generator-metrics" 
-        title="Performance Metrics" 
-        icon={<BarChart size={16} className="text-white" />}
-        color="#007AFF"
-      >
-        <div className="space-y-6">
-          <p className="text-gray-700">
-            The Generator Agent's effectiveness is measured through key performance indicators that track its ability to produce comprehensive, accurate test assets efficiently.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-white/60 p-4 rounded-lg border border-gray-100 shadow-sm">
-              <h4 className="text-base font-medium mb-2 text-spa-blue">Test Coverage</h4>
-              <div className="text-2xl font-bold mb-1">98.5%</div>
-              <p className="text-xs text-gray-500">Functional requirement coverage</p>
-            </div>
-            
-            <div className="bg-white/60 p-4 rounded-lg border border-gray-100 shadow-sm">
-              <h4 className="text-base font-medium mb-2 text-spa-blue">Generation Speed</h4>
-              <div className="text-2xl font-bold mb-1">50+</div>
-              <p className="text-xs text-gray-500">Test cases per minute</p>
-            </div>
-            
-            <div className="bg-white/60 p-4 rounded-lg border border-gray-100 shadow-sm">
-              <h4 className="text-base font-medium mb-2 text-spa-blue">Accuracy</h4>
-              <div className="text-2xl font-bold mb-1">96.2%</div>
-              <p className="text-xs text-gray-500">Test case quality assessment</p>
-            </div>
-            
-            <div className="bg-white/60 p-4 rounded-lg border border-gray-100 shadow-sm">
-              <h4 className="text-base font-medium mb-2 text-spa-blue">Data Variety</h4>
-              <div className="text-2xl font-bold mb-1">10K+</div>
-              <p className="text-xs text-gray-500">Synthetic data records per hour</p>
             </div>
           </div>
         </div>
@@ -494,49 +455,8 @@ const GeneratorDetails: React.FC = () => {
           </div>
         </div>
       </DetailSection>
-      
-      <DetailSection 
-        id="generator-case-studies" 
-        title="Success Stories" 
-        icon={<FileCheck size={16} className="text-white" />}
-        color="#007AFF"
-      >
-        <div className="space-y-6">
-          <div className="bg-white/60 p-5 rounded-lg border border-gray-100 shadow-sm">
-            <h4 className="text-lg font-medium mb-2">Financial Services: Regulatory Compliance Testing</h4>
-            <p className="text-sm text-gray-700 mb-3">
-              A global banking client used the Generator Agent to transform 5,000+ pages of regulatory requirements into comprehensive test suites. The agent automatically created 12,000+ test cases with full traceability to specific regulations, reducing compliance risk and audit preparation time by 70%.
-            </p>
-            <div className="text-sm text-spa-blue font-medium">
-              Key achievements:
-            </div>
-            <ul className="text-sm text-gray-700 mt-1 list-disc pl-5">
-              <li>70% reduction in compliance documentation effort</li>
-              <li>98.7% regulatory requirement coverage</li>
-              <li>3x faster response to regulatory changes</li>
-            </ul>
-          </div>
-          
-          <div className="bg-white/60 p-5 rounded-lg border border-gray-100 shadow-sm">
-            <h4 className="text-lg font-medium mb-2">Digital Corporate Banking: Platform Modernization</h4>
-            <p className="text-sm text-gray-700 mb-3">
-              A leading financial institution leveraged the Generator Agent to modernize their corporate banking platform. The agent analyzed complex financial workflows and generated 15,000+ test scenarios covering payment processing, treasury management, and cash flow forecasting features with precise validation for regulatory requirements across multiple jurisdictions.
-            </p>
-            <div className="text-sm text-spa-blue font-medium">
-              Key achievements:
-            </div>
-            <ul className="text-sm text-gray-700 mt-1 list-disc pl-5">
-              <li>90% reduction in test case creation time</li>
-              <li>42 critical security vulnerabilities identified pre-launch</li>
-              <li>99.5% transaction accuracy verification</li>
-              <li>Compliance with banking regulations across 28 countries</li>
-            </ul>
-          </div>
-        </div>
-      </DetailSection>
     </div>
   );
 };
 
 export default GeneratorDetails;
-
