@@ -21,7 +21,7 @@ const GeneratorDetailsSection: React.FC = () => {
       </div>
       
       {/* Generator Sub-Navigation */}
-      <div className="mb-8">
+      <div className="mb-8 sticky top-20 z-10 bg-white/90 backdrop-blur-sm py-3 border-b border-gray-100 shadow-sm">
         <SectionNavigation items={generatorNavItems} isSubNav={true} />
       </div>
       

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Wand2, Workflow, Database, PieChart, Zap, FileCheck, GitPullRequest, BarChart, GitMerge, ArrowRight, ArrowDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -331,7 +330,7 @@ const GeneratorDetails: React.FC = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white/60 p-4 rounded-lg border border-gray-100 shadow-sm">
-            <h4 className="text-base font-medium mb-3 text-spa-blue">NLP Understanding</h4>
+            <h4 className="text-base font-medium mb-3 text-spa-blue">Synthesised Knowledge</h4>
             <ul className="text-sm text-gray-700 space-y-2 list-disc pl-5">
               <li>Parses complex requirements in natural language</li>
               <li>Identifies implied business rules and constraints</li>
