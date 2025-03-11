@@ -164,7 +164,7 @@ const GeneratorDetails: React.FC = () => {
               <FlowNode title="Requirements" type="Input" color="#6366F1">
                 <FlowArrow />
               </FlowNode>
-              <FlowNode title="Sample Test Date Format" type="Input" color="#6366F1">
+              <FlowNode title="Sample Test Data Formats" type="Input" color="#6366F1">
                 <FlowArrow />
               </FlowNode>
               <FlowNode title="Templates" type="Input" color="#6366F1">
