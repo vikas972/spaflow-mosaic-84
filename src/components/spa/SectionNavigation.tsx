@@ -11,9 +11,10 @@ export interface NavigationItem {
 interface SectionNavigationProps {
   items: NavigationItem[];
   className?: string;
+  isSubNav?: boolean;
 }
 
-const SectionNavigation: React.FC<SectionNavigationProps> = ({ items, className }) => {
+const SectionNavigation: React.FC<SectionNavigationProps> = ({ items, className, isSubNav = false }) => {
   const [activeSection, setActiveSection] = useState<string>(items[0]?.id || '');
 
   useEffect(() => {
@@ -54,8 +55,13 @@ const SectionNavigation: React.FC<SectionNavigationProps> = ({ items, className 
     }
   };
 
+  // Different positioning for main nav and sub-nav
+  const navClasses = isSubNav 
+    ? "sticky top-32 bg-white/90 backdrop-blur-md rounded-lg shadow-md border border-gray-200 p-2 mt-4"
+    : "fixed top-4 left-0 right-0 z-40 mx-auto max-w-7xl bg-white/90 backdrop-blur-md rounded-lg shadow-md border border-gray-200 p-2";
+
   return (
-    <div className={cn("fixed top-4 left-0 right-0 z-30 mx-auto max-w-7xl bg-white/90 backdrop-blur-md rounded-lg shadow-md border border-gray-200 p-2", className)}>
+    <div className={cn(navClasses, className)}>
       <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">
         {items.map((item) => (
           <button

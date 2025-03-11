@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Wand2, Workflow, Database, PieChart, Zap, FileCheck, GitPullRequest, BarChart, GitMerge, ArrowRight, ArrowDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -126,7 +127,7 @@ const GeneratorDetails: React.FC = () => {
       >
         <div className="text-gray-700 space-y-4">
           <p>
-            The Generator Agent is the cornerstone of the SPA framework, responsible for transforming business requirements into comprehensive test artifacts. Using advanced NLP capabilities, it automatically generates test scenarios, cases, steps, and synthetic data to ensure complete coverage of functional requirements.
+            The Generator Agent is the cornerstone of the SPA framework, responsible for transforming business requirements into comprehensive test artifacts. Using advanced LLM capabilities, it automatically generates test scenarios, cases, steps, and synthetic data to ensure complete coverage of functional requirements.
           </p>
           <p>
             With its ability to understand context and business logic, the Generator accelerates the QA process by eliminating manual test creation while maintaining consistency and traceability to source requirements.
@@ -163,7 +164,7 @@ const GeneratorDetails: React.FC = () => {
               <FlowNode title="Requirements" type="Input" color="#6366F1">
                 <FlowArrow />
               </FlowNode>
-              <FlowNode title="Test Data" type="Input" color="#6366F1">
+              <FlowNode title="Sample Test Date Format" type="Input" color="#6366F1">
                 <FlowArrow />
               </FlowNode>
               <FlowNode title="Templates" type="Input" color="#6366F1">

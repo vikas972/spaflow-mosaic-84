@@ -1,3 +1,4 @@
+
 import React from 'react';
 import GeneratorDetails from '@/components/spa/GeneratorDetails';
 import SectionNavigation from '@/components/spa/SectionNavigation';
@@ -21,7 +22,7 @@ const GeneratorDetailsSection: React.FC = () => {
       
       {/* Generator Sub-Navigation */}
       <div className="mb-8">
-        <SectionNavigation items={generatorNavItems} className="sticky top-20" />
+        <SectionNavigation items={generatorNavItems} isSubNav={true} />
       </div>
       
       <GeneratorDetails />
